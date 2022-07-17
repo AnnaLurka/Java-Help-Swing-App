@@ -1,3 +1,3 @@
 # Java-Help-Swing-App
 
-A very simple Java Help Center Swing Application displaying Java statements.
+A very simple Java Help Center Application displaying Java statements(Swing GUI).

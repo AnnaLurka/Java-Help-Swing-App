@@ -10,8 +10,12 @@ public class HelpSwing {
 
         JFrame frame = new JFrame("Java Help Center - Swing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,700);
-        frame.setLocation(700,200);
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = kit.getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+        frame.setSize(screenWidth / 2,screenHeight / 2);
+        frame.setLocation(screenWidth / 4,screenHeight / 4);
         frame.setVisible(true);
 
         JList<String> options = new JList<>(keyWords);
@@ -25,7 +29,7 @@ public class HelpSwing {
         JLabel help = new JLabel("Choose an option:");
         JScrollPane helpScrollPane = new JScrollPane(help);
         helpScrollPane.setPreferredSize(new Dimension(500, 400));
-        helpScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        helpScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         helpScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         help.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
